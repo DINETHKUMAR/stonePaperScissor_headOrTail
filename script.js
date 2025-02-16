@@ -37,11 +37,11 @@ function playgame(playermove){
       result = 'Tie';
     }
     
-  }if (result=='Win'){
+  }if (result==='Win'){
     rpsscore.Wins+=1;
-  }else if (result=='Lose'){
+  }else if (result==='Lose'){
     rpsscore.Lose+=1;
-  }else if (result=='Tie'){
+  }else if (result==='Tie'){
     rpsscore.Tie+=1;
   }
   
@@ -70,9 +70,9 @@ function headOrTail(){
   }else if(random>=0.5 && random <1){
     result = 'You Lose';
   }
-  if (result=='You Win'){
+  if (result==='You Win'){
     htscore.Wins+=1;
-  }else if (result=='You Lose'){
+  }else if (result==='You Lose'){
     htscore.Lose+=1;
   }
   alert(`${result}
