@@ -3,7 +3,7 @@ let  rpsscore =JSON.parse(localStorage.getItem('rpsscore')) || {
   Lose : 0,
   Tie : 0
 }
-const htscore =JSON.parse(localStorage.getItem('htscore')) || {
+let htscore =JSON.parse(localStorage.getItem('htscore')) || {
   Wins : 0,
   Lose : 0,
   
