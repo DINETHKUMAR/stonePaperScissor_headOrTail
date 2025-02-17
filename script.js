@@ -90,7 +90,7 @@ function resetrpsScore() {
 
   
 }
-function resethtScore() {
+function resethtscore() {
   
   htscore.Wins = 0;
   htscore.Lose = 0;
