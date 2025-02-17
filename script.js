@@ -1,13 +1,15 @@
-const rpsscore = {
+let  rpsscore =JSON.parse(localStorage.getItem('rpsscore')) || {
   Wins : 0,
   Lose : 0,
   Tie : 0
 }
-const htscore = {
+const htscore =JSON.parse(localStorage.getItem('htscore')) || {
   Wins : 0,
   Lose : 0,
   
 }
+console.log(localStorage.getItem('rpsscore'));
+console.log(localStorage.getItem('htscore'));
 function playgame(playermove){
   const computerMove = pickcomputermove();
   let result ='';
@@ -44,6 +46,7 @@ function playgame(playermove){
   }else if (result==='Tie'){
     rpsscore.Tie+=1;
   }
+  localStorage.setItem('rpsscore',JSON.stringify(rpsscore));
   
   alert(`Your move is ${playermove} and computer move is ${computerMove}, so you ${result}.
     Wins:${rpsscore.Wins} , Lose : ${rpsscore.Lose} , Tie :${rpsscore.Tie}`);
@@ -75,6 +78,7 @@ function headOrTail(){
   }else if (result==='You Lose'){
     htscore.Lose+=1;
   }
+  localStorage.setItem('htscore',JSON.stringify(htscore));
   alert(`${result}
    Wins : ${htscore.Wins} , Lose : ${htscore.Lose} `)
 }
@@ -82,14 +86,15 @@ function resetrpsScore() {
   rpsscore.Wins = 0;
   rpsscore.Lose = 0;
   rpsscore.Tie = 0;
-  
+  localStorage.removeItem('rpsscore');
 
-  alert("Scores Reset!\nRock Paper Scissors: Wins: 0, Losses: 0, Ties: 0");
+  
 }
 function resethtScore() {
   
   htscore.Wins = 0;
   htscore.Lose = 0;
+  localStorage.removeItem('htscore');
 
-  alert("Scores Reset!\nHead or Tail: Wins: 0, Losses: 0");
+  
 }
