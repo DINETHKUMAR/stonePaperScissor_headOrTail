@@ -8,48 +8,57 @@ let htscore =JSON.parse(localStorage.getItem('htscore')) || {
   Lose : 0,
   
 }
-console.log(localStorage.getItem('rpsscore'));
-console.log(localStorage.getItem('htscore'));
+updaterps();
+updateht();
+document.querySelector('.js-rpsmove')
+  .innerHTML=`Make Your Move!`;
+
+
 function playgame(playermove){
   const computerMove = pickcomputermove();
   let result ='';
   if (playermove==='Stone'){
     if (computerMove==='Paper'){
-      result = 'Lose';
+      result = 'You Lose';
     }else if (computerMove==='Stone'){
       result = 'Tie';
     }if (computerMove==='Scissor'){
-      result = 'Win';
+      result = 'You Win';
     }
     
   }else if(playermove==='Paper'){
     if (computerMove==='Paper'){
       result = 'Tie';
     }else if (computerMove==='Stone'){
-      result = 'Win';
+      result = 'You Win';
     }if (computerMove==='Scissor'){
-      result = 'Lose';
+      result = 'You Lose';
     }
   }else if(playermove==='Scissor'){
     if (computerMove==='Paper'){
-      result = 'Win';
+      result = 'You Win';
     }else if (computerMove==='Stone'){
-      result = 'Lose';
+      result = 'You Lose';
     }else if (computerMove==='Scissor'){
       result = 'Tie';
     }
     
-  }if (result==='Win'){
+  }if (result==='You Win'){
     rpsscore.Wins+=1;
-  }else if (result==='Lose'){
+  }else if (result==='You Lose'){
     rpsscore.Lose+=1;
   }else if (result==='Tie'){
     rpsscore.Tie+=1;
   }
   localStorage.setItem('rpsscore',JSON.stringify(rpsscore));
-  
-  alert(`Your move is ${playermove} and computer move is ${computerMove}, so you ${result}.
-    Wins:${rpsscore.Wins} , Lose : ${rpsscore.Lose} , Tie :${rpsscore.Tie}`);
+  updaterps();
+  document.querySelector('.js-rpsresult').innerHTML = result;
+
+  document.querySelector('.js-rpsmove').innerHTML = `You ${playermove} - ${computerMove} Computer`;
+}
+function updaterps(){
+  document.querySelector('.js-rpsscore')
+   .innerHTML = `Wins:${rpsscore.Wins} , Lose : ${rpsscore.Lose} , Tie :${rpsscore.Tie}`;
 }
 
 function pickcomputermove(){
@@ -79,22 +88,29 @@ function headOrTail(){
     htscore.Lose+=1;
   }
   localStorage.setItem('htscore',JSON.stringify(htscore));
-  alert(`${result}
-   Wins : ${htscore.Wins} , Lose : ${htscore.Lose} `)
+  updateht();
+  document.querySelector('.js-htresult').innerHTML = result;
 }
+function updateht(){
+  document.querySelector('.js-htscore')
+   .innerHTML = `Wins:${htscore.Wins} , Lose : ${htscore.Lose}`;}
+
 function resetrpsScore() {
   rpsscore.Wins = 0;
   rpsscore.Lose = 0;
   rpsscore.Tie = 0;
   localStorage.removeItem('rpsscore');
-
+  updaterps();
+  document.querySelector('.js-rpsmove')
+  .innerHTML=`Make Your Move!`;
   
 }
+
 function resethtscore() {
-  
   htscore.Wins = 0;
   htscore.Lose = 0;
   localStorage.removeItem('htscore');
-
-  
+  updateht();
+  document.querySelector('.js-htresult')
+  .innerHTML=`Make Your Move!`;
 }

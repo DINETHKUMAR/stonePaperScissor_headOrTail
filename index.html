@@ -4,7 +4,7 @@
     <title>
       Game
     </title>
-    <script src="script.js"></script>
+    
 
   </head>
   <body>
@@ -15,8 +15,12 @@
     <button onclick="playgame('Paper');">Paper</button>
 
     <button onclick="playgame('Scissor');">Scissor</button>
+    <p class="js-rpsresult"></p>
+    <p class="js-rpsmove"></p>
+    <p class="js-rpsscore"></p>
 
-    <button onclick="resetrpsScore();">Reset</button>
+    <button onclick="resetrpsScore();
+    ">Reset</button>
 
 
     <h1>Head or Tail</h1>
@@ -24,9 +28,15 @@
     <button onclick="headOrTail();">Head</button>
 
     <button onclick="headOrTail();">Tail</button>
+    <p class="js-htresult"></p>
+    
+    <p class="js-htscore"></p>
+
 
     <button onclick="resethtscore();">Reset</button>
 
+    <script src="script.js"></script>
 
     
+</body>
 </html>
