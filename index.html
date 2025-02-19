@@ -4,36 +4,38 @@
     <title>
       Game
     </title>
-    
+    <link rel="stylesheet" href="style.css">
 
   </head>
   <body>
-    <h1>Stone paper and scrissor</h1>
+    <h1>Rock paper and scrissor</h1>
 
-    <button onclick="playgame('Stone');">Stone</button>
+    <button class="im-btn" onclick="playgame('Stone');"><img src="img/Stone-emoji.png" ></button>
 
-    <button onclick="playgame('Paper');">Paper</button>
+    <button class="im-btn" onclick="playgame('Paper');"><img src="img/Paper-emoji.png"></button>
 
-    <button onclick="playgame('Scissor');">Scissor</button>
-    <p class="js-rpsresult"></p>
+    <button class="im-btn"  onclick="playgame('Scissor');"><img src="img/Scissor-emoji.png"></button>
+  
+    <p  class="js-rpsresult result"></p>
     <p class="js-rpsmove"></p>
     <p class="js-rpsscore"></p>
 
-    <button onclick="resetrpsScore();
+    <button class="reset" onclick="resetrpsScore();
     ">Reset</button>
 
 
     <h1>Head or Tail</h1>
 
-    <button onclick="headOrTail();">Head</button>
+    <button class="htbtn" onclick="headOrTail();"><img class="htimg" src="img/head.jpg"></button>
 
-    <button onclick="headOrTail();">Tail</button>
-    <p class="js-htresult"></p>
+    <button class="htbtn" onclick="headOrTail();"><img class="htimg" src="img/tail.jpg"></button>
+
+    <p class="js-htresult result"></p>
     
     <p class="js-htscore"></p>
 
 
-    <button onclick="resethtscore();">Reset</button>
+    <button class="reset"  onclick="resethtscore();">Reset</button>
 
     <script src="script.js"></script>
 

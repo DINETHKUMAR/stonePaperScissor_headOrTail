@@ -54,7 +54,7 @@ function playgame(playermove){
   updaterps();
   document.querySelector('.js-rpsresult').innerHTML = result;
 
-  document.querySelector('.js-rpsmove').innerHTML = `You ${playermove} - ${computerMove} Computer`;
+  document.querySelector('.js-rpsmove').innerHTML = `You <img src="img/${playermove}-emoji.png">  <img src="img/${computerMove}-emoji.png">Computer`
 }
 function updaterps(){
   document.querySelector('.js-rpsscore')
